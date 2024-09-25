@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars Brazil</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function selectCar() {
+            const selectElement = document.getElementById("types-car");
+            const selectedCar = selectElement.value;
+            const url = selectedCar + ".html";
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Cars Brazil</h1>
+        <p>Choose your favorite type of car and explore more about it!</p>
+    </header>
+
+    <main>
+        <div class="car-selection">
+            <label for="types-car">Cars Type:</label>
+            <select id="types-car">
+                <option value="SUV">SUV</option>
+                <option value="DABABY">DABABY</option>
+                <option value="Convertible">Convertible</option>
+                <option value="Hyper Car">Hyper Car</option>
+                <option value="Sport Car">Sport Car</option>
+            </select>
+            <button onclick="selectCar()">Select</button>
+        </div>
+        <div class="car-image">
+            <img id="car-img" src="download (1).jpeg" alt="Select a car to view the image">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cars Brazil - All rights reserved- massimus creating+ AI because i not make all i dont no </p>
+    </footer>
+
+    <script>
+        document.getElementById('types-car').addEventListener('change', function () {
+            const selectedCar = this.value;
+            const carImage = document.getElementById('car-img');
+            carImage.src = selectedCar.toLowerCase() + ".jpg"; // Assumindo que tenha imagens com os nomes SUV.jpg, Sedan.jpg etc.
+            carImage.alt = selectedCar + " image";
+        });
+    </script>
+</body>
+</html>
